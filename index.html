@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ianallen.org</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    #content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      min-width: 0;
+      word-wrap: break-word;
+    }
+
+    th, td {
+      border: 1px transparent #ddd;
+      padding: 8px;
+      text-align: center;
+      font-size: 1.2em; 
+      width:33.33%;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    img {
+      display: block;
+      margin-bottom: 20px;
+      max-width: 35%;
+      max-height: 35%;
+    }
+  </style>
+</head>
+<body>
+  <div id="content-container">
+    <img src="img/img1.jpg">
+    <table>
+      <tbody>
+        <tr>
+          <td><a id="email" href="">Email</a></td>
+          <td><a id="github" href="">Github</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a id="instagram" href="">Instagram</a></td>
+          <td><a id="lawyer" href="">Legal</a></td>      
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <script>
+    function obfuscateLink(elementId, encodedLink) {
+      const anchor = document.getElementById(elementId);
+      if (elementId == "email") {
+        anchor.href = "mailto:" + atob(encodedLink);
+      } else {
+        anchor.href = atob(encodedLink);
+      }
+    }
+
+    var encEmail = "aWFuYWxsZW5AZ21haWwuY29t";
+    obfuscateLink("email", encEmail);
+
+    var encGithub = "aHR0cHM6Ly93d3cuZ2l0aHViLmNvbS9pYTk5";
+    obfuscateLink("github", encGithub);
+
+    var encInstagram = "aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9pYW5hbGxlbmxhdw==";
+    obfuscateLink("instagram", encInstagram);
+
+    var encLawyer = "aHR0cHM6Ly9zYm0ucmVsaWFndWlkZS5jb20vbGF3eWVyLzQ4ODQzLU1JLUlhbi1BbGxlbi01MTc1NQ==";
+    obfuscateLink("lawyer", encLawyer);
+
+  </script>
+</body>
+</html>
