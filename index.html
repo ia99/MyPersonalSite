@@ -23,7 +23,7 @@
     }
 
     table {
-      width: 50%;
+      width: 60%;
       border-collapse: collapse;
       table-layout: fixed;
       min-width: 0;
@@ -54,26 +54,23 @@
 
     img {
       display: block;
-      margin-bottom: 20px;
-      max-width: 70%;
+      margin: 20px;
+      max-width: 60%;
       height: auto;
     }
-  
-    @media screen and (min-width: 768px) {
+
+     @media screen and (min-width: 900px) {
       img {
-        max-width: 50%;
+        max-width: 45%;
       }
      }
-     
-     @media screen and (max-width: 600px) {
+
+     @media screen and (min-width: 1200px) {
       img {
-        max-width: 50%;
+        max-width: 30%;
       }
      }
-  
-      table {
-        width: 80%;
-      }
+
 </style>
 </head>
 <body>
@@ -84,6 +81,13 @@
         <tr>
           <td><a id="email" href="">Email</a></td>
           <td><a id="github" href="">Github</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <tr>
           <td><a id="instagram" href="">Instagram</a></td>
           <td><a id="legal" href="">Legal</a></td>    
         </tr>
