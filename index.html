@@ -27,7 +27,6 @@
       border-collapse: collapse;
       table-layout: fixed;
       min-width: 0;
-      word-wrap: break-word;
     }
 
     th, td {
@@ -36,6 +35,9 @@
       text-align: center;
       font-size: 1.2em; 
       width:33.33%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
     }
 
     th {
@@ -45,12 +47,15 @@
     a {
       text-decoration: none;
       color: #007bff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: 'clip';
     }
 
     img {
       display: block;
       margin-bottom: 20px;
-      max-width: 100%;
+      max-width: 70%;
       height: auto;
     }
   
@@ -58,27 +63,18 @@
       img {
         max-width: 50%;
       }
-  
-      table {
-        width: 50%;
-      }
-    }
-  
-    @media screen and (max-width: 600px) {
+     }
+     
+     @media screen and (max-width: 600px) {
       img {
-        max-width: 80%;
+        max-width: 50%;
       }
+     }
   
       table {
         width: 80%;
       }
-  
-      #instagram {
-        word-wrap: break-word;
-        white-space: normal;
-      }
-    }
-  </style>
+</style>
 </head>
 <body>
   <div id="content-container">
@@ -89,7 +85,7 @@
           <td><a id="email" href="">Email</a></td>
           <td><a id="github" href="">Github</a></td>
           <td><a id="instagram" href="">Instagram</a></td>
-          <td><a id="lawyer" href="">Legal</a></td>    
+          <td><a id="legal" href="">Legal</a></td>    
         </tr>
       </tbody>
     </table>
@@ -114,8 +110,8 @@
     var encInstagram = "aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9pYW5hbGxlbmxhdw==";
     obfuscateLink("instagram", encInstagram);
 
-    var encLawyer = "aHR0cHM6Ly9zYm0ucmVsaWFndWlkZS5jb20vbGF3eWVyLzQ4ODQzLU1JLUlhbi1BbGxlbi01MTc1NQ==";
-    obfuscateLink("lawyer", encLawyer);
+    var encLegal = "aHR0cHM6Ly9zYm0ucmVsaWFndWlkZS5jb20vbGF3eWVyLzQ4ODQzLU1JLUlhbi1BbGxlbi01MTc1NQ==";
+    obfuscateLink("legal", encLegal);
 
   </script>
 </body>
